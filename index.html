@@ -14,7 +14,7 @@
     <nav aria-label="Main navigation">
       <a href="#shop">Shop</a><a href="#fitment">Fitment</a><a href="#about">Our standard</a>
     </nav>
-    <a class="bag-link" href="#shop">Explore collection <span>↗</span></a>
+    <button class="bag-link cart-toggle" type="button" aria-controls="cart-drawer" aria-expanded="false">Cart <span class="cart-count" id="cart-count">0</span></button>
   </header>
 
   <main id="top">
@@ -50,18 +50,18 @@
       <div class="product-grid">
         <article class="product-card" data-category="fender">
           <div class="product-visual visual-one"><span class="product-label">CONCEPT 01</span><div class="mini-fender"><b>VOLTEN</b></div></div>
-          <div class="product-details"><p class="product-kind">FRONT FENDER</p><h3>V-Series Front Fender</h3><p class="fitment-note">Fitment details to be confirmed</p><div class="product-foot"><strong>COMING SOON</strong><button class="notify-button" data-product="V-Series Front Fender">Notify me</button></div></div>
+          <div class="product-details"><p class="product-kind">FRONT FENDER</p><h3>V-Series Front Fender</h3><p class="fitment-note">Fitment details to be confirmed</p><div class="product-foot"><strong>PRICE TBA</strong><button class="add-to-cart" data-id="v-series-fender">Add to cart</button></div></div>
         </article>
         <article class="product-card" data-category="graphics">
           <div class="product-visual visual-two"><span class="product-label">CONCEPT 02</span><div class="graphic-sheet"><span>V</span><b>VOLTEN</b><i>RACE / DIVISION</i></div></div>
-          <div class="product-details"><p class="product-kind">DECAL KIT</p><h3>Stealth Graphics Kit</h3><p class="fitment-note">Model-specific kits planned</p><div class="product-foot"><strong>COMING SOON</strong><button class="notify-button" data-product="Stealth Graphics Kit">Notify me</button></div></div>
+          <div class="product-details"><p class="product-kind">DECAL KIT</p><h3>Stealth Graphics Kit</h3><p class="fitment-note">Model-specific kits planned</p><div class="product-foot"><strong>PRICE TBA</strong><button class="add-to-cart" data-id="stealth-graphics-kit">Add to cart</button></div></div>
         </article>
         <article class="product-card" data-category="fender">
           <div class="product-visual visual-three"><span class="product-label">CONCEPT 03</span><div class="mini-fender mono"><b>VOLTEN</b></div></div>
-          <div class="product-details"><p class="product-kind">FRONT FENDER</p><h3>Mono Front Fender</h3><p class="fitment-note">Fitment details to be confirmed</p><div class="product-foot"><strong>COMING SOON</strong><button class="notify-button" data-product="Mono Front Fender">Notify me</button></div></div>
+          <div class="product-details"><p class="product-kind">FRONT FENDER</p><h3>Mono Front Fender</h3><p class="fitment-note">Fitment details to be confirmed</p><div class="product-foot"><strong>PRICE TBA</strong><button class="add-to-cart" data-id="mono-front-fender">Add to cart</button></div></div>
         </article>
       </div>
-      <p class="disclaimer">These are design concepts, not products currently available for purchase. Pricing, materials, compatibility, and inventory will be confirmed before launch.</p>
+      <p class="disclaimer">These are pre-launch product concepts. The cart is currently a preview: prices, materials, compatibility, inventory, and checkout will be enabled after products are finalized.</p>
     </section>
 
     <section class="standards" id="about">
@@ -82,15 +82,14 @@
 
   <footer class="site-footer"><a class="logo" href="#top">VOLTEN<span>.</span></a><p>© <span id="year"></span> VOLTEN. Independent concept brand.</p><div><a href="#shop">Shop</a><a href="#fitment">Fitment</a><a href="mailto:hello@volten.example">Contact</a></div></footer>
 
-  <dialog id="notify-dialog">
-    <form method="dialog" class="dialog-card">
-      <button class="dialog-close" aria-label="Close">×</button>
-      <p class="eyebrow">VOLTEN / EARLY ACCESS</p>
-      <h2 id="dialog-title">STAY IN THE LOOP.</h2>
-      <p>This is a preview site. Email signup is not connected yet. Contact <a href="mailto:hello@volten.example">hello@volten.example</a> for launch questions.</p>
-      <button class="button button-primary">Got it</button>
-    </form>
-  </dialog>
+  <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header"><div><p class="eyebrow">YOUR SELECTION</p><h2>YOUR CART <span id="cart-heading-count">(0)</span></h2></div><button class="cart-close" id="cart-close" type="button" aria-label="Close cart">×</button></div>
+    <div class="cart-items" id="cart-items"><p class="cart-empty">Your cart is empty. Explore the collection to add something.</p></div>
+    <div class="cart-summary"><div class="cart-subtotal"><span>Subtotal</span><strong id="cart-subtotal">Pricing not set</strong></div>
+      <p class="cart-note">VOLTEN is in pre-launch. These products are concepts, and checkout is not active yet. No payment can be taken from this preview cart.</p>
+      <button class="button button-primary checkout-button" id="checkout-button" type="button" disabled>Checkout coming soon</button></div>
+  </aside>
   <script src="script.js"></script>
 </body>
 </html>
